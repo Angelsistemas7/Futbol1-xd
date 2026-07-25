@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-07-25T13:55:52.276232+00:00",
+  "sources": {
+    "bing/wc_schedule.html": "ok",
+    "bing/wc_stats.html": "ok",
+    "worldfootball/wc_referees.html": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
+    "espn/ucl_schedule.json": "ok",
+    "espn/liga_mx_schedule.json": "ok",
+    "espn/mls_schedule.json": "ok",
+    "espn/brasileirao_schedule.json": "ok",
+    "understat/la_liga_league_data.json": "ok",
+    "understat/epl_league_data.json": "ok",
+    "understat/bundesliga_league_data.json": "ok",
+    "understat/serie_a_league_data.json": "ok",
+    "understat/ligue_1_league_data.json": "ok"
+  }
+}

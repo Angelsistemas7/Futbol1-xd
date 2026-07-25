@@ -1,0 +1,4 @@
+# Nothing to install — the vendored clients under scripts/vendored/ only use
+# the stdlib (urllib, json, gzip). Kept as an explicit empty file rather than
+# omitted so the workflow's `pip install -r requirements.txt` step stays valid
+# if a future source needs a real dependency.
