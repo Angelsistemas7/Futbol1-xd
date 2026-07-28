@@ -31,3 +31,35 @@ UNDERSTAT_COMPETITIONS = {
     "serie_a": {"understat_slug": "Serie A", "season_year": 2025},
     "ligue_1": {"understat_slug": "Ligue 1", "season_year": 2025},
 }
+
+# World Cup national teams — Transfermarkt (slug, team_id) pairs mirrored
+# verbatim from FutureSport's own
+# infrastructure/scraping/transfermarkt/injury_provider.py._TEAM_IDS. Do NOT
+# add a team here by guessing the slug/ID pattern — a guessed Transfermarkt ID
+# has silently returned the WRONG team's page before (see that file's
+# docstring). Only extend this after verifying a new pair live and copying it
+# into both places by hand.
+TRANSFERMARKT_TEAM_IDS: dict[str, tuple[str, int]] = {
+    "Spain": ("spanien", 3375),
+    "Argentina": ("argentinien", 3437),
+    "Barcelona": ("fc-barcelona", 131),
+    "France": ("frankreich", 3377),
+    "Morocco": ("marokko", 3575),
+    "Belgium": ("belgien", 3382),
+    "Norway": ("norwegen", 3440),
+    "England": ("england", 3299),
+    "Switzerland": ("schweiz", 3384),
+}
+
+# Same World Cup team set for BBC Sport — slug is normally lowercase-hyphenate,
+# with overrides mirrored from
+# infrastructure/scraping/bbc_sport/news_provider.py._SLUG_OVERRIDES. Reuses
+# the same team-name keys as TRANSFERMARKT_TEAM_IDS above so both snapshot
+# steps iterate the exact same verified team list.
+BBC_SLUG_OVERRIDES = {
+    "United States": "usa",
+}
+
+
+def bbc_slug(team_name: str) -> str:
+    return BBC_SLUG_OVERRIDES.get(team_name, team_name.lower().replace(" ", "-"))
