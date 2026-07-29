@@ -72,9 +72,20 @@ def _write_if_ok(relative_path: str, fetch) -> None:
     DATA_DIR/relative_path (dicts as JSON, strings as-is) and records "ok".
     On any exception, records the error and leaves the existing file (if any)
     untouched — a transient failure should never clobber the last good
-    snapshot with an error page."""
+    snapshot with an error page.
+
+    An empty result (falsy string/dict/list) is treated the same as an
+    exception, not a success — confirmed live 2026-07-29: Transfermarkt
+    returns HTTP 200 with a blank body to GitHub Actions' IPs specifically
+    (works fine from a regular machine), and because that doesn't raise, it
+    silently overwrote all 9 good injuries snapshots from `bce8ff7` with
+    empty files across several hourly runs before this guard existed. Same
+    "no data" vs "confirmed empty" distinction FutureSport's own
+    TransfermarktInjuryProvider already draws for exactly this reason."""
     try:
         value = fetch()
+        if not value:
+            raise ValueError("empty response — not overwriting the last good snapshot")
         path = DATA_DIR / relative_path
         path.parent.mkdir(parents=True, exist_ok=True)
         if isinstance(value, (dict, list)):
@@ -141,6 +152,8 @@ def _fetch_new_espn_summaries() -> None:
             rel = f"espn/{comp_code}/summary_{event_id}.json.gz"
             try:
                 raw = _espn.get_summary_json(cfg["espn_sport_path"], event_id)
+                if not raw:
+                    raise ValueError("empty response — not writing a summary file for this event_id")
                 summaries_dir.mkdir(parents=True, exist_ok=True)
                 out_path.write_bytes(gzip.compress(raw.encode("utf-8")))
                 _results[rel] = "ok"
