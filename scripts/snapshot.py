@@ -57,6 +57,13 @@ REQUEST_DELAY_SECONDS = 2.5  # personal-use pace, not a scraping burst — see R
 # (_MAX_EVENTS_FETCHES, interfaces/api/app.py).
 _MAX_NEW_SUMMARIES_PER_RUN = 25
 
+# Separate, smaller budget for the World Cup + 5 domestic leagues (see
+# competitions.ESPN_SUPPLEMENTARY_COMPETITIONS) so backfilling them can never
+# eat into the espn_native competitions' own budget above - those 4 already
+# depend on this schedule/summary data as their ONLY fixture source, the 6
+# supplementary ones don't (2026-07-29).
+_MAX_NEW_SUMMARIES_PER_RUN_SUPPLEMENTARY = 25
+
 _bing = BingSportsClient()
 _espn = ESPNClient()
 _understat = UnderstatClient()
@@ -122,11 +129,11 @@ def _completed_event_ids(schedule_json_path: Path) -> list[str]:
     return ids
 
 
-def _fetch_new_espn_summaries() -> None:
+def _fetch_new_espn_summaries(comp_items: list, budget: int) -> None:
     """Tops up data/espn/{comp_code}/summary_{event_id}.json.gz for every
-    completed match that doesn't have one on disk yet, capped at
-    _MAX_NEW_SUMMARIES_PER_RUN new fetches for this run, split into an even
-    per-competition sub-budget (oldest-listed-first within each competition).
+    completed match in `comp_items` that doesn't have one on disk yet, capped
+    at `budget` new fetches for this run, split into an even per-competition
+    sub-budget (oldest-listed-first within each competition).
 
     The per-competition split matters in practice, not just in theory:
     confirmed live 2026-07-27 with a real run — Champions League alone had
@@ -135,9 +142,13 @@ def _fetch_new_espn_summaries() -> None:
     Liga MX/MLS/Brasileirao — the leagues actually in season right now —
     completely starved until UCL's backlog cleared, which at 25/run could
     have taken days. Splitting the budget evenly means every competition
-    makes some progress every run instead of one hogging it."""
-    comp_items = list(competitions.ESPN_NATIVE_COMPETITIONS.items())
-    per_comp_budget = max(1, _MAX_NEW_SUMMARIES_PER_RUN // len(comp_items))
+    makes some progress every run instead of one hogging it.
+
+    Called twice from `main()`, once per budget constant, so the World
+    Cup/5 domestic leagues (see `ESPN_SUPPLEMENTARY_COMPETITIONS`) backfill
+    independently and can never starve the 4 espn_native competitions that
+    actually depend on this data as their only fixture source."""
+    per_comp_budget = max(1, budget // len(comp_items))
     total_fetched = 0
     for comp_code, cfg in comp_items:
         schedule_path = DATA_DIR / f"espn/{comp_code}_schedule.json"
@@ -165,7 +176,7 @@ def _fetch_new_espn_summaries() -> None:
             total_fetched += 1
             time.sleep(REQUEST_DELAY_SECONDS)
     print(f"espn summaries: {total_fetched} new this run, "
-          f"budget was {_MAX_NEW_SUMMARIES_PER_RUN} ({per_comp_budget}/competition)")
+          f"budget was {budget} ({per_comp_budget}/competition)")
 
 
 def main() -> None:
@@ -205,6 +216,15 @@ def main() -> None:
             lambda cfg=cfg: _espn.get_scoreboard_json(cfg["espn_sport_path"], cfg["espn_date_from"], cfg["espn_date_to"]),
         )
 
+    # World Cup + 5 domestic leagues' ESPN schedule (Bing/Understat stay
+    # canonical for these, see ESPN_SUPPLEMENTARY_COMPETITIONS's docstring) —
+    # only fetched to discover event_ids for the summary backfill below.
+    for comp_code, cfg in competitions.ESPN_SUPPLEMENTARY_COMPETITIONS.items():
+        _write_if_ok(
+            f"espn/{comp_code}_schedule.json",
+            lambda cfg=cfg: _espn.get_scoreboard_json(cfg["espn_sport_path"], cfg["espn_date_from"], cfg["espn_date_to"]),
+        )
+
     # Domestic leagues via Understat (schedule + player season stats, one payload).
     for comp_code, cfg in competitions.UNDERSTAT_COMPETITIONS.items():
         _write_if_ok(
@@ -212,11 +232,15 @@ def main() -> None:
             lambda cfg=cfg: _understat.get_league_data(cfg["understat_slug"], cfg["season_year"]),
         )
 
-    # Per-match ESPN detail (stats/lineups/goal events) — the rich data, run
-    # last and after the fresh schedules above so it sees this run's newest
-    # completed matches, not last run's. See _fetch_new_espn_summaries's own
-    # docstring for the incremental/capped/gzip reasoning.
-    _fetch_new_espn_summaries()
+    # Per-match ESPN detail (stats/lineups/goal events/odds) — the rich data,
+    # run last and after the fresh schedules above so it sees this run's
+    # newest completed matches, not last run's. See _fetch_new_espn_summaries's
+    # own docstring for the incremental/capped/gzip reasoning, and the two
+    # separate budget constants for why this runs twice.
+    _fetch_new_espn_summaries(list(competitions.ESPN_NATIVE_COMPETITIONS.items()), _MAX_NEW_SUMMARIES_PER_RUN)
+    _fetch_new_espn_summaries(
+        list(competitions.ESPN_SUPPLEMENTARY_COMPETITIONS.items()), _MAX_NEW_SUMMARIES_PER_RUN_SUPPLEMENTARY,
+    )
 
     meta = {"generated_at": datetime.now(timezone.utc).isoformat(), "sources": _results}
     (DATA_DIR).mkdir(parents=True, exist_ok=True)

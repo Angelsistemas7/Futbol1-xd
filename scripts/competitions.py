@@ -23,6 +23,25 @@ ESPN_NATIVE_COMPETITIONS = {
     "brasileirao": {"espn_sport_path": "bra.1", "espn_date_from": "20260101", "espn_date_to": "20261231"},
 }
 
+# The World Cup and the 5 domestic leagues below: Bing/Understat are still the
+# CANONICAL fixture source for these (see BING_LEAGUE/UNDERSTAT_COMPETITIONS),
+# this is only a supplementary ESPN schedule so this job can discover event_ids
+# to backfill the same rich per-match summaries (stats/lineups/events/odds) it
+# already saves for the 4 espn_native competitions above. FutureSport already
+# fetches these same sport_paths live for exactly this reason (real stats for
+# every competition, not just espn_native ones, matched by team name via
+# normalize_team_name) - this just lets that same data get backfilled from a
+# snapshot instead of a live request. Mirrors futuresport's own
+# `_COMPETITIONS` espn_sport_path/date values exactly (2026-07-29).
+ESPN_SUPPLEMENTARY_COMPETITIONS = {
+    "wc": {"espn_sport_path": "fifa.world", "espn_date_from": "20260601", "espn_date_to": "20260720"},
+    "la_liga": {"espn_sport_path": "esp.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
+    "epl": {"espn_sport_path": "eng.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
+    "bundesliga": {"espn_sport_path": "ger.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
+    "serie_a": {"espn_sport_path": "ita.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
+    "ligue_1": {"espn_sport_path": "fra.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
+}
+
 # Domestic leagues: Understat is canonical (schedule + player season stats).
 UNDERSTAT_COMPETITIONS = {
     "la_liga": {"understat_slug": "La liga", "season_year": 2025},
