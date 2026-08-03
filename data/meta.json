@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T21:01:15.183587+00:00",
+  "generated_at": "2026-08-03T22:08:48.187387+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -37,21 +37,17 @@
     "understat/bundesliga_league_data.json": "ok",
     "understat/serie_a_league_data.json": "ok",
     "understat/ligue_1_league_data.json": "ok",
-    "espn/la_liga/summary_748450.json.gz": "ok",
-    "espn/la_liga/summary_748444.json.gz": "ok",
-    "espn/la_liga/summary_748445.json.gz": "ok",
-    "espn/la_liga/summary_748448.json.gz": "ok",
-    "espn/epl/summary_740899.json.gz": "ok",
-    "espn/epl/summary_740900.json.gz": "ok",
-    "espn/epl/summary_740903.json.gz": "ok",
-    "espn/epl/summary_740896.json.gz": "ok",
-    "espn/bundesliga/summary_747021.json.gz": "ok",
-    "espn/bundesliga/summary_747022.json.gz": "ok",
-    "espn/serie_a/summary_737085.json.gz": "ok",
-    "espn/serie_a/summary_737090.json.gz": "ok",
-    "espn/serie_a/summary_737088.json.gz": "ok",
-    "espn/serie_a/summary_737087.json.gz": "ok",
-    "espn/ligue_1/summary_746713.json.gz": "ok",
-    "espn/ligue_1/summary_746716.json.gz": "ok"
+    "espn/la_liga/summary_748451.json.gz": "ok",
+    "espn/la_liga/summary_748446.json.gz": "ok",
+    "espn/la_liga/summary_748469.json.gz": "ok",
+    "espn/la_liga/summary_748468.json.gz": "ok",
+    "espn/epl/summary_740904.json.gz": "ok",
+    "espn/epl/summary_740913.json.gz": "ok",
+    "espn/epl/summary_740908.json.gz": "ok",
+    "espn/epl/summary_740906.json.gz": "ok",
+    "espn/serie_a/summary_737089.json.gz": "ok",
+    "espn/serie_a/summary_737086.json.gz": "ok",
+    "espn/serie_a/summary_737094.json.gz": "ok",
+    "espn/serie_a/summary_737100.json.gz": "ok"
   }
 }
