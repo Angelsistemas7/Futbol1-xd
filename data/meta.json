@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T17:31:49.297416+00:00",
+  "generated_at": "2026-08-07T18:29:03.623184+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -26,7 +26,7 @@
     "espn/liga_mx_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/mls_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/brasileirao_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
-    "espn/wc_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
+    "espn/wc_schedule.json": "error: urllib.error.URLError: <urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1032)>",
     "espn/la_liga_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/epl_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/bundesliga_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
