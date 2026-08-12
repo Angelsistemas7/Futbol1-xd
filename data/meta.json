@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T17:14:56.515912+00:00",
+  "generated_at": "2026-08-12T18:09:59.099044+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -18,7 +18,7 @@
     "bbc/barcelona_news.html": "ok",
     "bbc/france_news.html": "ok",
     "bbc/morocco_news.html": "ok",
-    "bbc/belgium_news.html": "ok",
+    "bbc/belgium_news.html": "error: TimeoutError: The read operation timed out",
     "bbc/norway_news.html": "ok",
     "bbc/england_news.html": "ok",
     "bbc/switzerland_news.html": "ok",
