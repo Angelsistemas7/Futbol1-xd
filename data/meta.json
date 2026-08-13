@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-13T18:09:41.442968+00:00",
+  "generated_at": "2026-08-13T19:23:42.468447+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
-    "bing/wc_stats.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
+    "bing/wc_stats.html": "ok",
     "worldfootball/wc_referees.html": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "transfermarkt/spanien_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "transfermarkt/argentinien_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
