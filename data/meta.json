@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T22:14:46.326038+00:00",
+  "generated_at": "2026-08-17T22:44:24.845956+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -32,10 +32,10 @@
     "espn/bundesliga_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/serie_a_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/ligue_1_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
-    "understat/la_liga_league_data.json": "error: TimeoutError: The read operation timed out",
+    "understat/la_liga_league_data.json": "error: urllib.error.HTTPError: HTTP Error 404: Not Found",
     "understat/epl_league_data.json": "error: urllib.error.HTTPError: HTTP Error 404: Not Found",
-    "understat/bundesliga_league_data.json": "error: TimeoutError: The read operation timed out",
-    "understat/serie_a_league_data.json": "error: TimeoutError: The read operation timed out",
+    "understat/bundesliga_league_data.json": "error: urllib.error.HTTPError: HTTP Error 404: Not Found",
+    "understat/serie_a_league_data.json": "error: urllib.error.HTTPError: HTTP Error 404: Not Found",
     "understat/ligue_1_league_data.json": "error: urllib.error.HTTPError: HTTP Error 404: Not Found",
     "espn/la_liga/summary_748491.json.gz": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/la_liga/summary_748492.json.gz": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
