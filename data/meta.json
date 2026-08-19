@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T06:24:14.201289+00:00",
+  "generated_at": "2026-08-19T07:25:06.379329+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -12,7 +12,7 @@
     "transfermarkt/belgien_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "transfermarkt/norwegen_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "transfermarkt/england_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
-    "transfermarkt/schweiz_injuries.html": "error: urllib.error.URLError: <urlopen error [Errno 104] Connection reset by peer>",
+    "transfermarkt/schweiz_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "bbc/spain_news.html": "ok",
     "bbc/argentina_news.html": "ok",
     "bbc/barcelona_news.html": "ok",
