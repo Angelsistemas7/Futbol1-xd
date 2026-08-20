@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T21:18:59.659702+00:00",
+  "generated_at": "2026-08-20T21:46:57.659812+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -15,7 +15,7 @@
     "transfermarkt/schweiz_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "bbc/spain_news.html": "ok",
     "bbc/argentina_news.html": "ok",
-    "bbc/barcelona_news.html": "error: TimeoutError: The read operation timed out",
+    "bbc/barcelona_news.html": "ok",
     "bbc/france_news.html": "ok",
     "bbc/morocco_news.html": "ok",
     "bbc/belgium_news.html": "ok",
