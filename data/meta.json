@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T12:22:37.349103+00:00",
+  "generated_at": "2026-08-21T13:30:30.350784+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -13,7 +13,7 @@
     "transfermarkt/norwegen_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "transfermarkt/england_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "transfermarkt/schweiz_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
-    "bbc/spain_news.html": "ok",
+    "bbc/spain_news.html": "error: TimeoutError: The read operation timed out",
     "bbc/argentina_news.html": "ok",
     "bbc/barcelona_news.html": "ok",
     "bbc/france_news.html": "ok",
