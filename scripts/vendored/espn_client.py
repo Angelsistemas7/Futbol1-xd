@@ -15,6 +15,19 @@ none):
     100 events without `limit`, 189 — the real count — with `limit=1000`). Every
     call below always passes a generous limit for this reason.
   - `dates` accepts a `YYYYMMDD-YYYYMMDD` range, not just a single day.
+
+`_USER_AGENT` update, confirmed live 2026-08-22 (same finding mirrored in
+FutureSport's own copy of this client, infrastructure/scraping/espn/client.py):
+every request using a real, modern-browser-shaped UA string (Chrome, Firefox
+— anything with a full version + platform signature) started getting a
+blanket 403 from what's clearly a bot-detection layer in front of this
+endpoint, while a request with NO User-Agent header at all, or a bare
+"Mozilla/5.0" with no further browser detail, still gets a normal 200. That's
+backwards for "generic bot blocking" but consistent with a WAF rule that
+flags a UA *claiming* to be a specific real browser without that browser's
+full fingerprint (extra headers, TLS ClientHello) — exactly what copying a
+realistic UA string into a scraper and nothing else looks like. Switched to
+the plainest honest string that still passes.
 """
 from __future__ import annotations
 
@@ -23,7 +36,7 @@ import urllib.request
 from typing import Callable
 
 _BASE_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer"
-_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+_USER_AGENT = "Mozilla/5.0"
 _SCOREBOARD_LIMIT = 1000
 
 Transport = Callable[[str], str]
