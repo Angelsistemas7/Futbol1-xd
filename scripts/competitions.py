@@ -35,20 +35,23 @@ ESPN_NATIVE_COMPETITIONS = {
 # `_COMPETITIONS` espn_sport_path/date values exactly (2026-07-29).
 ESPN_SUPPLEMENTARY_COMPETITIONS = {
     "wc": {"espn_sport_path": "fifa.world", "espn_date_from": "20260601", "espn_date_to": "20260720"},
-    "la_liga": {"espn_sport_path": "esp.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
-    "epl": {"espn_sport_path": "eng.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
-    "bundesliga": {"espn_sport_path": "ger.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
-    "serie_a": {"espn_sport_path": "ita.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
-    "ligue_1": {"espn_sport_path": "fra.1", "espn_date_from": "20250801", "espn_date_to": "20260630"},
+    "la_liga": {"espn_sport_path": "esp.1", "espn_date_from": "20260801", "espn_date_to": "20270630"},
+    "epl": {"espn_sport_path": "eng.1", "espn_date_from": "20260801", "espn_date_to": "20270630"},
+    "bundesliga": {"espn_sport_path": "ger.1", "espn_date_from": "20260801", "espn_date_to": "20270630"},
+    "serie_a": {"espn_sport_path": "ita.1", "espn_date_from": "20260801", "espn_date_to": "20270630"},
+    "ligue_1": {"espn_sport_path": "fra.1", "espn_date_from": "20260801", "espn_date_to": "20270630"},
 }
 
 # Domestic leagues: Understat is canonical (schedule + player season stats).
+# season_year bumped 2025->2026 on 2026-08-22 for the 2026/27 season, mirroring
+# the same bump in FutureSport's own _COMPETITIONS (services.py) — see that
+# file's comment for what was confirmed live against Understat that day.
 UNDERSTAT_COMPETITIONS = {
-    "la_liga": {"understat_slug": "La liga", "season_year": 2025},
-    "epl": {"understat_slug": "EPL", "season_year": 2025},
-    "bundesliga": {"understat_slug": "Bundesliga", "season_year": 2025},
-    "serie_a": {"understat_slug": "Serie A", "season_year": 2025},
-    "ligue_1": {"understat_slug": "Ligue 1", "season_year": 2025},
+    "la_liga": {"understat_slug": "La liga", "season_year": 2026},
+    "epl": {"understat_slug": "EPL", "season_year": 2026},
+    "bundesliga": {"understat_slug": "Bundesliga", "season_year": 2026},
+    "serie_a": {"understat_slug": "Serie A", "season_year": 2026},
+    "ligue_1": {"understat_slug": "Ligue 1", "season_year": 2026},
 }
 
 # World Cup national teams — Transfermarkt (slug, team_id) pairs mirrored
