@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-23T21:14:32.410227+00:00",
+  "generated_at": "2026-08-23T21:38:16.445694+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
     "worldfootball/wc_referees.html": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
-    "transfermarkt/spanien_injuries.html": "error: urllib.error.URLError: <urlopen error [Errno 104] Connection reset by peer>",
+    "transfermarkt/spanien_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "transfermarkt/argentinien_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "transfermarkt/fc-barcelona_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
     "transfermarkt/frankreich_injuries.html": "error: ValueError: empty response \u2014 not overwriting the last good snapshot",
