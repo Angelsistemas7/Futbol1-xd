@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T14:47:10.871807+00:00",
+  "generated_at": "2026-09-08T18:12:03.281032+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -22,7 +22,7 @@
     "bbc/norway_news.html": "ok",
     "bbc/england_news.html": "ok",
     "bbc/switzerland_news.html": "ok",
-    "espn/ucl_schedule.json": "error: urllib.error.URLError: <urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1032)>",
+    "espn/ucl_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/liga_mx_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/mls_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/brasileirao_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
