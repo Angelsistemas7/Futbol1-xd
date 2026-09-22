@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T19:21:25.716836+00:00",
+  "generated_at": "2026-09-22T22:18:32.014301+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -46,7 +46,7 @@
     "espn/epl/summary_740945.json.gz": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/epl/summary_740936.json.gz": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/serie_a/summary_737126.json.gz": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
-    "espn/serie_a/summary_737128.json.gz": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
+    "espn/serie_a/summary_737128.json.gz": "error: urllib.error.URLError: <urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1032)>",
     "espn/serie_a/summary_737130.json.gz": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
     "espn/serie_a/summary_737132.json.gz": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden"
   }
