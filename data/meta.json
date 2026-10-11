@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T18:56:58.324372+00:00",
+  "generated_at": "2026-10-11T22:34:46.729402+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -26,7 +26,7 @@
     "espn/liga_mx_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/mls_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/brasileirao_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
-    "espn/wc_schedule.json": "error: urllib.error.HTTPError: HTTP Error 403: Forbidden",
+    "espn/wc_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/la_liga_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/epl_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/bundesliga_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
