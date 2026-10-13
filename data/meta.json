@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T23:54:34.889527+00:00",
+  "generated_at": "2026-10-13T04:11:33.919827+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -23,7 +23,7 @@
     "bbc/england_news.html": "ok",
     "bbc/switzerland_news.html": "ok",
     "espn/ucl_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
-    "espn/liga_mx_schedule.json": "error: TimeoutError: The read operation timed out",
+    "espn/liga_mx_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/mls_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/brasileirao_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/wc_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
