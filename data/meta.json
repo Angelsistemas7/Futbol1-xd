@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T05:11:07.382303+00:00",
+  "generated_at": "2026-10-24T09:34:40.049400+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -33,7 +33,7 @@
     "espn/serie_a_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/ligue_1_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "understat/la_liga_league_data.json": "ok",
-    "understat/epl_league_data.json": "ok",
+    "understat/epl_league_data.json": "error: urllib.error.URLError: <urlopen error _ssl.c:1015: The handshake operation timed out>",
     "understat/bundesliga_league_data.json": "ok",
     "understat/serie_a_league_data.json": "ok",
     "understat/ligue_1_league_data.json": "ok"
