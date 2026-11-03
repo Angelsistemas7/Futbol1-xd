@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T16:31:32.668759+00:00",
+  "generated_at": "2026-11-03T21:58:14.288303+00:00",
   "sources": {
     "bing/wc_schedule.html": "ok",
     "bing/wc_stats.html": "ok",
@@ -32,10 +32,10 @@
     "espn/bundesliga_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/serie_a_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
     "espn/ligue_1_schedule.json": "error: urllib.error.HTTPError: HTTP Error 400: Bad Request",
-    "understat/la_liga_league_data.json": "error: urllib.error.URLError: <urlopen error timed out>",
-    "understat/epl_league_data.json": "error: urllib.error.URLError: <urlopen error timed out>",
-    "understat/bundesliga_league_data.json": "error: urllib.error.URLError: <urlopen error timed out>",
-    "understat/serie_a_league_data.json": "error: urllib.error.URLError: <urlopen error timed out>",
-    "understat/ligue_1_league_data.json": "error: urllib.error.URLError: <urlopen error timed out>"
+    "understat/la_liga_league_data.json": "error: json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+    "understat/epl_league_data.json": "error: json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+    "understat/bundesliga_league_data.json": "error: json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+    "understat/serie_a_league_data.json": "error: json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+    "understat/ligue_1_league_data.json": "error: json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
   }
 }
